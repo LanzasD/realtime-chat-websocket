@@ -1,10 +1,10 @@
 # PROYECTO CHAT SOPORTE TI / IT SUPPORT CHAT PROJECT 
 
-[🇪🇸 Versión en Español](#-español) | [🇬🇧 English Version](#-english)
+[Versión en Español](#-español) | [English Version](#-english)
 
 ---
 
-## 🇪🇸 Español
+## Español
 
 Es una app de chat al estilo WhatsApp muy primigenio. La he construido para aprender y descubrir cómo funcionan las conexiones bidireccionales en tiempo real (WebSockets).
 
@@ -35,7 +35,7 @@ Aquí podemos ver el funcionamiento de este chat:
 
 ---
 
-## 🇬🇧 English
+## English
 
 This is a very early-stage WhatsApp-style chat app. I built it to learn and discover how real-time bidirectional connections (WebSockets) work.
 
