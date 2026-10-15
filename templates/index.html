@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat soporte TI</title>
+    <link rel="stylesheet" href="{{ url_for("static", filename="style.css") }}">
+    <!-- Importa la herramienta SocketIO para el navegador -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+
+</head>
+
+<body>
+
+    <div class= "chat-container">
+        <h2> CHAT SOPORTE TI </h2>
+        <div class="barra-perfil" style="background-color: #1a302b; color: white; padding: 10px; text-align: center; border-radius: 5px; margin-bottom: 10px;">
+            Conectado como: <strong> {{usuario_actual }}</strong>
+            <a href="{{ url_for('logout') }}" style="color: #edb431; text-decoration: none; margin-left: 15px; font-size: 0.9em;">[ Cerrar Sesión ]</a>
+        </div>
+        <div class="panel-conectados">
+            <strong> En línea: </strong><span id="lista-usuarios-online">Conectando...</span>
+        </div>
+        <ul id="mensajes"></ul> <!-- Esto es la respuesta del servidor -->
+        <div id="estadoEscribiendo"></div>
+        <div class="input-area">
+            <input type = "text" id = "cajaTexto" placeholder = "Escribe un mensaje...">
+            <button id="botonEnviar">Enviar </button>
+        </div>
+    </div>
+    <script>
+        const nombreUsuario = " {{ usuario_actual }}";
+    </script>
+    <script src="{{ url_for("static", filename="main.js") }}"> </script>
+</body>
+</html>

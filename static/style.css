@@ -1,0 +1,236 @@
+/* Resetea la pantalla y centra el chat */
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: darkslategray;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    overflow: hidden; /* Evita scrolls dobles extraños */
+}
+
+/* El marco principal */
+.chat-container {
+    width: 100%;
+    max-width: 400px;
+    background-color: dimgray;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    overflow: hidden;
+}
+/* La barra superior */
+
+h2 {
+    background-color: lightslategray;
+    color: white;
+    margin: 0;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+/* Historial del chat */
+#mensajes {
+    list-style-type: none; /* Quita los puntos de lista HTML */
+    padding: 20px;
+    display: flex; /* Convierte la lista en un motor Flexbox interno */
+    flex-direction: column; /* Apila los mensajes de arriba a abajo */
+    overflow-y: auto; /* Garantiza que el scroll funcione dentro de este bloque */
+    flex-grow: 1; /* Absorbe todo el espacio vertical disponible */
+    margin: 0;
+    gap: 10px; /* Separación entre burbujas */
+}
+
+.burbuja {
+
+    padding: 10px 15px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    max-width: 70%;
+overflow-wrap: break-word; /* Obliga al texto a saltar de línea al llegar al borde */
+    word-break: break-word; /* Corta palabras infinitas (como un "jajajaja" larguísimo) para que no rompan el diseño */
+}
+
+.mensaje-mio {
+    background-color: #533931;
+    color: white; /* El texto blanco para que se vea */
+    align-self: flex-end; /* Empuja el elemento a la derecha */
+    border-radius: 15px 15px 0px 15px; /* Le da forma de bocadillo típico de los chats */
+    border: 1px solid #4B3621;
+ }
+
+.mensaje-otro {
+    background-color: #a4a6a5;
+    color: black;
+    align-self: flex-start; /* Empuja el elemento a la izquierda */
+    border-radius: 15px 15px 15px 0px;
+    border: 1px solid #ccc;
+}
+
+ /* Cada bocadillo de mensaje individual */
+li {
+    background-color: cadetblue;
+    padding: 10px 15px;
+    border-radius: 15px;
+    max-width: 80%;
+    align-self: flex-end; /* Empuja los bocadillos a la derecha */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+/* La zona de abajo para escribir */
+.input-area {
+    display: flex;
+    padding: 10px;
+    flex-shrink: 0;
+    background-color: lightslategray;
+}
+
+#cajaTexto{
+flex-grow: 1; /* Para que ocupe el espacio disponible */
+    padding: 10px;
+    border: 2px solid #a4a6a5; /* Borde en Gris Pluma */
+    border-radius: 20px;
+    outline: none; /* Quita el borde al hacer click */
+}
+
+/* Efecto al hacer clic dentro de la caja de texto */
+#cajaTexto:focus {
+    border-color: #1a302b; /* El borde se vuelve verde oscuro al escribir */
+}
+
+#botonEnviar {
+background-color: #edb431; /* Amarillo mostaza */
+    color: #1a302b; /* Letras en verde para contrastar */
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+/* Efecto al pasar el ratón por encima del botón */
+#botonEnviar:hover {
+    background-color: #c99827; /* Un mostaza un poco más oscuro */
+}
+
+#estadoEscribiendo {
+    color: gray;
+    font-style: italic;
+    font-size: 0.85em;
+    margin-left: 10px;
+    height: 20px; /* Sin esto el texto iría pegando saltos, así que se deja fijado */
+}
+
+.nombre-autor {
+    display: block; /* Obliga al nombre a ocupar toda su propia línea arriba del todo */
+    text-align: left; /* Lo ancla firmemente a la izquierda */
+    font-weight: bold;
+    font-size: 0.85em;
+    margin-bottom: 5px; /* Crea un pequeño espacio para empujar el mensaje hacia abajo */
+    color: #1a302b;
+    width: 100%; /* Asegura que nadie se le ponga al lado */
+}
+
+.hora-pequena {
+    font-size: 0.7em; /* Letra pequeña */
+    opacity: 0.7; /* Lo hace sutilmente transparente para que no moleste */
+    margin-left: 10px;
+    float: right; /* Empuja la hora a la esquina derecha de la burbuja */
+    margin-top: 5px;
+}
+
+/* ------ PANTALLAS DE LOGIN Y REGISTRO ------ */
+
+.auth-container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 400px; /* Más estrecho que el chat para que el formulario se vea compacto */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.auth-titulo {
+    color: #1a302b; /* Verde Ánade */
+    margin-bottom: 25px;
+    margin-top: 0;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Crea separación automática entre los campos */
+}
+
+.auth-input {
+    padding: 12px;
+    border: 2px solid #a4a6a5;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1em;
+}
+
+.auth-input:focus {
+    border-color: #1a302b;
+}
+
+.auth-boton {
+    background-color: #edb431;
+    color: #1a302b;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.auth-boton:hover {
+    background-color: #c99827;
+}
+
+.auth-link {
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+.auth-link a {
+    color: #1a302b;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.panel-conectados {
+    background-color: #f1f2f2; /* Un gris hiper claro para no robar atención */
+    border: 1px solid #a4a6a5;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 0.85em;
+    color: #1a302b;
+    margin-bottom: 15px;
+}
+
+#lista-usuarios-online {
+    font-weight: bold;
+    color: #533931; /* Los nombres en Marrón Castaño */
+}
+
+.alerta-error{
+    background-color: #fde8e8;
+    color: #9b1c1c;
+    border: 1px solid #f8b4b4;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    font-weight: bold;
+}

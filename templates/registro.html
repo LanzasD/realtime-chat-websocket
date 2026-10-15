@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro - Soporte TI</title>
+    <!-- Enlaza el CSS para que aplique también el fondo verde -->
+    <link rel="stylesheet" href="{{ url_for("static", filename="style.css") }}">
+</head>
+<body>
+    <div class="auth-container">
+        <h2 class="auth-titulo">Alta de Empleado</h2>
+
+        <!-- Recolecta los aviso que envía Flash -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="alerta-error">
+                    {{ messages[0] }}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <form action="/registro" method="POST" class="auth-form">
+            <input type="text" name="usuario" placeholder="Nombre de usuario" required class="auth-input">
+            <input type="password" name="password" placeholder="Contraseña" required class="auth-input">
+
+            <button type="submit" class="auth-boton">Registrar</button>
+        </form>
+
+        <p class="auth-link">¿Ya tienes cuenta? <a href="{{ url_for("login") }}">Entra aquí</a></p>
+    </div>
+</body>
+</html>

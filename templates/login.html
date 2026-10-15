@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Acceso - Soporte TI</title>
+    <!-- Enlaza el CSS para que aplique también el fondo verde -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="auth-container">
+        <h2 class="auth-titulo">Acceso Corporativo</h2>
+
+        <!-- Recolecta los aviso que envía Flash -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="alerta-error">
+                    {{ messages[0] }}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <form action="/login" method="POST" class="auth-form">
+            <input type="text" name="usuario" placeholder="Nombre de usuario" required class="auth-input">
+            <input type="password" name="password" placeholder="Contraseña" required class="auth-input">
+
+            <button type="submit" class="auth-boton">Entrar</button>
+        </form>
+
+        <p class="auth-link">¿Nuevo empleado? <a href="{{ url_for('registro') }}">Regístrate aquí</a></p>
+    </div>
+</body>
+</html>
