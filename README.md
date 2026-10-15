@@ -1,4 +1,4 @@
-# PROYECTO CHAT SOPORTE TI / IT SUPPORT CHAT PROJECT 💬
+# PROYECTO CHAT SOPORTE TI / IT SUPPORT CHAT PROJECT 
 
 [🇪🇸 Versión en Español](#-español) | [🇬🇧 English Version](#-english)
 
